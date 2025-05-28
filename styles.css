@@ -1,0 +1,236 @@
+/* Reset */
+body, h1, h2, h3, p, ul, address {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f4f7ff;
+  color: #333;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-img-wrapper {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+#profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.6em;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 6px;
+}
+
+header address a {
+  color: #cce7ff;
+  text-decoration: none;
+  font-style: normal;
+}
+
+header address a:hover {
+  text-decoration: underline;
+}
+
+#toggle-theme {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+section {
+  background: #fff;
+  padding: 24px;
+  margin-top: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  color: #6a11cb;
+  margin-bottom: 12px;
+  font-size: 1.6em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+}
+
+.projects article {
+  margin-bottom: 20px;
+}
+
+.projects h3 {
+  font-size: 1.2em;
+  color: #222;
+}
+
+.projects ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #444;
+}
+
+.dates {
+  font-style: italic;
+  color: #2575fc;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.skills .skill-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills h4 {
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.skills ul {
+  list-style: circle;
+  margin-left: 20px;
+  color: #555;
+}
+
+.skills div {
+  flex: 1 1 200px;
+}
+
+.education p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 16px 20px;
+  background: #6a11cb;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.95em;
+  border-radius: 10px;
+}
+
+footer a {
+  color: #aee4ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background: linear-gradient(to right, #2e2e2e, #1a1a1a);
+  color: #fff;
+}
+
+.dark-mode #toggle-theme {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode section h2 {
+  color: #90caf9;
+  border-color: #444;
+}
+
+.dark-mode .dates {
+  color: #82b1ff;
+}
+
+.dark-mode .projects h3,
+.dark-mode .skills h4 {
+  color: #fff;
+}
+
+.dark-mode .projects ul,
+.dark-mode .skills ul,
+.dark-mode .about p,
+.dark-mode .education p {
+  color: #ccc;
+}
+
+.dark-mode footer {
+  background-color: #222;
+  color: #bbb;
+}
+
+.dark-mode footer a {
+  color: #64b5f6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  section, header {
+    padding: 16px;
+  }
+
+  footer {
+    font-size: 0.85em;
+  }
+
+  .skills .skill-columns {
+    flex-direction: column;
+  }
+}
