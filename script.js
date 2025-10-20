@@ -18,30 +18,6 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
-// 🖼️ Profile Image Upload + Persistence
-const profileUpload = document.getElementById('profile-upload');
-const profileImg = document.getElementById('profile-img');
-
-if (profileUpload && profileImg) {
-  // Load previously saved image (if any)
-  const savedImg = localStorage.getItem('profileImg');
-  if (savedImg) profileImg.src = savedImg;
-
-  // Update and store new image
-  profileUpload.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const result = e.target.result;
-        profileImg.src = result;
-        localStorage.setItem('profileImg', result);
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-}
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -73,7 +49,6 @@ searchInput?.addEventListener('input', (e) => {
     li.style.display = li.textContent.toLowerCase().includes(query) ? 'list-item' : 'none';
   });
 });
-
 const scrollBtn = document.createElement('button');
 scrollBtn.id = 'scrollTopBtn';
 scrollBtn.textContent = '⬆️';
@@ -98,6 +73,7 @@ document.body.appendChild(scrollBtn);
 window.addEventListener('scroll', () => {
   scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
+
 scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   scrollBtn.style.transform = 'scale(1.2)';
