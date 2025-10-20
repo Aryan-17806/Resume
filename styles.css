@@ -11,7 +11,7 @@ body {
   background: #f4f7ff;
   color: #333;
   padding: 20px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -21,12 +21,18 @@ header {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
 }
 
 .profile-img-wrapper {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.profile-img-wrapper:hover {
+  transform: scale(1.05);
 }
 
 #profile-img {
@@ -41,6 +47,7 @@ header {
 header h1 {
   font-size: 2.6em;
   margin: 10px 0;
+  letter-spacing: 1px;
 }
 
 header p {
@@ -52,20 +59,30 @@ header address a {
   color: #cce7ff;
   text-decoration: none;
   font-style: normal;
+  transition: color 0.3s ease;
 }
 
 header address a:hover {
   text-decoration: underline;
+  color: #ffffff;
 }
 
 #toggle-theme {
   margin-top: 12px;
-  padding: 6px 12px;
+  padding: 8px 16px;
   background-color: #fff;
   color: #333;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#toggle-theme:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
 }
 
 section {
@@ -74,14 +91,20 @@ section {
   margin-top: 24px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 section h2 {
   color: #6a11cb;
   margin-bottom: 12px;
   font-size: 1.6em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #eee;
   padding-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .about p {
@@ -90,8 +113,9 @@ section h2 {
   color: #444;
 }
 
+/* Projects */
 .projects article {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .projects h3 {
@@ -99,10 +123,25 @@ section h2 {
   color: #222;
 }
 
+.projects p {
+  color: #555;
+}
+
 .projects ul {
   list-style-type: disc;
   margin-left: 20px;
   color: #444;
+  margin-top: 8px;
+}
+
+.projects a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.projects a:hover {
+  text-decoration: underline;
 }
 
 .dates {
@@ -112,6 +151,7 @@ section h2 {
   display: block;
 }
 
+/* Skills Section */
 .skills .skill-columns {
   display: flex;
   flex-wrap: wrap;
@@ -131,15 +171,33 @@ section h2 {
 }
 
 .skills div {
-  flex: 1 1 200px;
+  flex: 1 1 220px;
 }
 
-.education p {
-  font-size: 1.1em;
+/* Education */
+.education ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education li {
+  margin-bottom: 10px;
+  font-size: 1.05em;
   color: #555;
-  margin-bottom: 5px;
 }
 
+/* Activities */
+.activities ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #444;
+}
+
+.activities li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 16px 20px;
@@ -148,14 +206,17 @@ footer {
   margin-top: 40px;
   font-size: 0.95em;
   border-radius: 10px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
   color: #aee4ff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -199,7 +260,8 @@ footer a:hover {
 .dark-mode .projects ul,
 .dark-mode .skills ul,
 .dark-mode .about p,
-.dark-mode .education p {
+.dark-mode .education p,
+.dark-mode .activities li {
   color: #ccc;
 }
 
@@ -212,7 +274,7 @@ footer a:hover {
   color: #64b5f6;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 600px) {
   body {
     padding: 10px;
